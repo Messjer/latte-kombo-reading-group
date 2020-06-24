@@ -12,4 +12,7 @@
     $$
     \mathbf{A}\mathbf{e} = 0 \mod q.
     $$
-    This problem is total as long as $(B+1)^m > q^n$, i.e. for every $\mathbf{A}$ a short solution is guaranteed to exist. Also prove that SIS and hSIS are equivalent on the avereage-case.s
+    This problem is total as long as $(B+1)^m > q^n$, i.e. for every $\mathbf{A}$ a short solution is guaranteed to exist. Also prove that SIS and hSIS are equivalent on the avereage-case.
+    
+3. Show that hSIS and SIS are equivalent in that a p.p.t. algorithm for one gives a p.p.t. algorithm to the other.
+
