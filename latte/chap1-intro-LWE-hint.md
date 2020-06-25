@@ -61,4 +61,5 @@
 2. Show that for the LWE problem with $(\mathbf{A,y})$ as input, the error vector $\mathbf{e}$ is unique.
 
 3. It was shown that you can reduce LWE to SIS in the *LWE-regime*. Running the reduction in reverse transforms SIS to LWE. Therefore SIS in the LWE-regime is LWE in disguise. Show explicitly such a reduction.
+    *Solution:* Let $(\mathbf{A,b})$ be an input to SIS. Our goal is to find short $\mathbf{e}$ that satisfies $\mathbf{Ae} =\mathbf{b}$. We can find a (not-necessarily short) vector $\mathbf{y} \in \mathbb{Z}_q^m$ by performing Gaussian elimination on $\mathbf{Ay} = \mathbf{b}$. Then $\mathbf{A}(\mathbf{y} - \mathbf{e}) = 0$ so $\mathbf{y} - \mathbf{e}$ is in the null space of $A$. Let $B \in \mathbb{Z}_q^{m\times (m - n)}$ be a matrix whose columns form a basis of the null space. Then there exists some $\mathbf{s} \in \mathbb{Z}_q^{m - n}$ such that $B\mathbf{s} = \mathbf{y} - \mathbf{e}$. Therefore $(B, \mathbf{y})$ is the LWE instance we need, since if we can solve for $\mathbf{s}$ we obtain $\mathbf{e} = \mathbf{y} - B\mathbf{s}$.
 
