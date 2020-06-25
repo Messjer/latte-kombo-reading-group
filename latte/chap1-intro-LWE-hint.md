@@ -65,8 +65,8 @@
 
 ## 1.2 Basic Theorems
 
-### Part A: Normal form SIS
+### Normal form SIS and short secret LWE
 
 1. Show that for random $\mathbf{B} \in \mathbb{Z}_q^{n\times n}, A' \in \mathbb{Z}_q^{n \times (m - n)}$,  $\mathbf{B}[\mathbf{A}'\Vert I]$ is uniformly random.
-2. 
+2. Show polynomial-time reductions of ssLWE($n,m,q,\chi$) and LWE($n,m,q,\chi)$ in both directions, where ssLWE is LWE except that the secret is also short (drawn from the error distribution).
 

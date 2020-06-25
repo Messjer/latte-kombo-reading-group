@@ -35,6 +35,5 @@
 
 ### Part A: Normal form SIS
 
-1. Fix a normal form matrix $[\mathbf{A}'\Vert I] \in \mathbb{Z}_q^{n \times m}$. Show that for a random $\mathbf{B} \in \mathbb{Z}_q^{n\times n}$,  $\mathbf{B}[\mathbf{A}'\Vert I]$ is uniformly random.
-2. 
-
+1. Show that for random $\mathbf{B} \in \mathbb{Z}_q^{n\times n}, A' \in \mathbb{Z}_q^{n \times (m - n)}$,  $\mathbf{B}[\mathbf{A}'\Vert I]$ is uniformly random.
+2. Show polynomial-time reductions of ssLWE($n,m,q,\chi$) and LWE($n,m,q,\chi)$ in both directions, where ssLWE is LWE except that the secret is also short (drawn from the error distribution).
