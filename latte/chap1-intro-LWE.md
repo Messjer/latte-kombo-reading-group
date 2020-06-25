@@ -31,3 +31,10 @@
 
 3. It was shown that you can reduce LWE to SIS in the *LWE-regime*. Running the reduction in reverse transforms SIS to LWE. Therefore SIS in the LWE-regime is LWE in disguise. Show explicitly such a reduction.
 
+## 1.2 Basic Theorems
+
+### Part A: Normal form SIS
+
+1. Fix a normal form matrix $[\mathbf{A}'\Vert I] \in \mathbb{Z}_q^{n \times m}$. Show that for a random $\mathbf{B} \in \mathbb{Z}_q^{n\times n}$,  $\mathbf{B}[\mathbf{A}'\Vert I]$ is uniformly random.
+2. 
+

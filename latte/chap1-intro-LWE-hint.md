@@ -45,7 +45,7 @@
     
     ~~Hint: Pigeonhole principle.~~
     
-    *Solution:* 
+    *Solution:* Consider the set $\{e_1\mathbf{a}_1 + \ldots e_m \mathbf{a}_m \vert e_1,\ldots, e_m \in \{0,1,2\ldots,B\}\}$. Since $(B + 1)^m > q^n$, there exist  $\mathbf{e}, \mathbf{f}$ such that $\mathbf{Ae = Af}$ so $\mathbf{A}(\mathbf{e - f}) = 0$. Note that $\mathbf{e - f} \in \{-B,\ldots,B\}^m$ is such a short vector solution. 
     
 3. Show that the average cases of hSIS and SIS are equivalent in that a p.p.t. algorithm for one gives a p.p.t. algorithm to the other.
 
@@ -62,4 +62,11 @@
 
 3. It was shown that you can reduce LWE to SIS in the *LWE-regime*. Running the reduction in reverse transforms SIS to LWE. Therefore SIS in the LWE-regime is LWE in disguise. Show explicitly such a reduction.
     *Solution:* Let $(\mathbf{A,b})$ be an input to SIS. Our goal is to find short $\mathbf{e}$ that satisfies $\mathbf{Ae} =\mathbf{b}$. We can find a (not-necessarily short) vector $\mathbf{y} \in \mathbb{Z}_q^m$ by performing Gaussian elimination on $\mathbf{Ay} = \mathbf{b}$. Then $\mathbf{A}(\mathbf{y} - \mathbf{e}) = 0$ so $\mathbf{y} - \mathbf{e}$ is in the null space of $A$. Let $B \in \mathbb{Z}_q^{m\times (m - n)}$ be a matrix whose columns form a basis of the null space. Then there exists some $\mathbf{s} \in \mathbb{Z}_q^{m - n}$ such that $B\mathbf{s} = \mathbf{y} - \mathbf{e}$. Therefore $(B, \mathbf{y})$ is the LWE instance we need, since if we can solve for $\mathbf{s}$ we obtain $\mathbf{e} = \mathbf{y} - B\mathbf{s}$.
+
+## 1.2 Basic Theorems
+
+### Part A: Normal form SIS
+
+1. Show that for random $\mathbf{B} \in \mathbb{Z}_q^{n\times n}, A' \in \mathbb{Z}_q^{n \times (m - n)}$,  $\mathbf{B}[\mathbf{A}'\Vert I]$ is uniformly random.
+2. 
 
