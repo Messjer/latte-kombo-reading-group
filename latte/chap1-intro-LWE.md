@@ -37,3 +37,16 @@
 
 1. Show that for random $\mathbf{B} \in \mathbb{Z}_q^{n\times n}, A' \in \mathbb{Z}_q^{n \times (m - n)}$,  $\mathbf{B}[\mathbf{A}'\Vert I]$ is uniformly random.
 2. Show polynomial-time reductions of ssLWE($n,m,q,\chi$) and LWE($n,m,q,\chi)$ in both directions, where ssLWE is LWE except that the secret is also short (drawn from the error distribution).
+
+## 1.3 Basic Crypto Application
+
+1. Show that the PKE demonstrated is correct if $\mathsf{Supp}(\chi) \subseteq (-q/4,q/4)$ aand CPA-secure under the LWE assumption $\mathsf{LWE}$$(n,m = \mathsf{poly}(n),q,\chi)$.
+
+2. > Open Problem 1.1: Construct a *nice* private-key encryption from the hardness of SIS.
+
+3. Prove that the Regev Scheme for public-key encryption is correct and CPA-secure.
+
+4. (Not stated as an exercise in note, but) Analyze the dual Regev Scheme.
+
+5. > Open Problem 1.2: construct a public-key encryption scheme from the hardness of LWE where the suuport of error $\chi$ is large, namely $[-cq,cq]$ for some constant $c$.
+
