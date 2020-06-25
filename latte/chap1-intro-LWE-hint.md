@@ -12,7 +12,7 @@
 
     ~~*Hint.* For distinct $\boldsymbol{e}, \boldsymbol{f} \in \mathbb{F}_q^m$, the events $\boldsymbol{Ae=b}$ and  $\boldsymbol{Af=b}$ (where $\boldsymbol{A}$ and $\boldsymbol{b}$ uniformly random) are indep because the event $\boldsymbol{A}(\boldsymbol{f}-\boldsymbol{e})=\boldsymbol{0}$ has prob $\frac{1}{q^n}$ by independence of rows, and for any fixed $\boldsymbol{A}$,  $\boldsymbol{Ae}  = \boldsymbol{b}$ has prob $\frac{1}{q^n}$. Let $X = |\{\boldsymbol{e} \in [-B, B]^m: \boldsymbol{Ae}=\boldsymbol{b}\}|$, which is a sum of pairwise indep indicators (n.b. not necessarily all indep). Now show that $X\neq 0$ w.h.p.~~
 
-    *Solution*: For a fixed $\mathbf{e} \in \{-B, \ldots,+B\}^n$ and some $\mathbf{A} \gets \mathbb{Z}_q^{n \times m}$, there is exactly one $\mathbf{b} \in \mathbb{Z}_q^n$ that satisfies the equation. Thereore
+    `Solution:` For a fixed $\mathbf{e} \in \{-B, \ldots,+B\}^n$ and some $\mathbf{A} \gets \mathbb{Z}_q^{n \times m}$, there is exactly one $\mathbf{b} \in \mathbb{Z}_q^n$ that satisfies the equation. Thereore
     $$
     \Pr_{A \gets \mathbb{Z}_q^{n \times m}, \mathbf{b} \gets \mathbb{Z}_q^n}[\mathbf{Ae} = \mathbf{b}] = \frac{1}{q^n}.
     $$
@@ -45,7 +45,7 @@
     
     ~~Hint: Pigeonhole principle.~~
     
-    *Solution:* Consider the set $\{e_1\mathbf{a}_1 + \ldots e_m \mathbf{a}_m \vert e_1,\ldots, e_m \in \{0,1,2\ldots,B\}\}$. Since $(B + 1)^m > q^n$, there exist  $\mathbf{e}, \mathbf{f}$ such that $\mathbf{Ae = Af}$ so $\mathbf{A}(\mathbf{e - f}) = 0$. Note that $\mathbf{e - f} \in \{-B,\ldots,B\}^m$ is such a short vector solution. 
+    `Solution:` Consider the set $\{e_1\mathbf{a}_1 + \ldots e_m \mathbf{a}_m \vert e_1,\ldots, e_m \in \{0,1,2\ldots,B\}\}$. Since $(B + 1)^m > q^n$, there exist  $\mathbf{e}, \mathbf{f}$ such that $\mathbf{Ae = Af}$ so $\mathbf{A}(\mathbf{e - f}) = 0$. Note that $\mathbf{e - f} \in \{-B,\ldots,B\}^m$ is such a short vector solution. 
     
 3. Show that the average cases of hSIS and SIS are equivalent in that a p.p.t. algorithm for one gives a p.p.t. algorithm to the other.
 
@@ -61,7 +61,7 @@
 2. Show that for the LWE problem with $(\mathbf{A,y})$ as input, the error vector $\mathbf{e}$ is unique.
 
 3. It was shown that you can reduce LWE to SIS in the *LWE-regime*. Running the reduction in reverse transforms SIS to LWE. Therefore SIS in the LWE-regime is LWE in disguise. Show explicitly such a reduction.
-    *Solution:* Let $(\mathbf{A,b})$ be an input to SIS. Our goal is to find short $\mathbf{e}$ that satisfies $\mathbf{Ae} =\mathbf{b}$. We can find a (not-necessarily short) vector $\mathbf{y} \in \mathbb{Z}_q^m$ by performing Gaussian elimination on $\mathbf{Ay} = \mathbf{b}$. Then $\mathbf{A}(\mathbf{y} - \mathbf{e}) = 0$ so $\mathbf{y} - \mathbf{e}$ is in the null space of $A$. Let $B \in \mathbb{Z}_q^{m\times (m - n)}$ be a matrix whose columns form a basis of the null space. Then there exists some $\mathbf{s} \in \mathbb{Z}_q^{m - n}$ such that $B\mathbf{s} = \mathbf{y} - \mathbf{e}$. Therefore $(B, \mathbf{y})$ is the LWE instance we need, since if we can solve for $\mathbf{s}$ we obtain $\mathbf{e} = \mathbf{y} - B\mathbf{s}$.
+    `Solution:` Let $(\mathbf{A,b})$ be an input to SIS. Our goal is to find short $\mathbf{e}$ that satisfies $\mathbf{Ae} =\mathbf{b}$. We can find a (not-necessarily short) vector $\mathbf{y} \in \mathbb{Z}_q^m$ by performing Gaussian elimination on $\mathbf{Ay} = \mathbf{b}$. Then $\mathbf{A}(\mathbf{y} - \mathbf{e}) = 0$ so $\mathbf{y} - \mathbf{e}$ is in the null space of $A$. Let $B \in \mathbb{Z}_q^{m\times (m - n)}$ be a matrix whose columns form a basis of the null space. Then there exists some $\mathbf{s} \in \mathbb{Z}_q^{m - n}$ such that $B\mathbf{s} = \mathbf{y} - \mathbf{e}$. Therefore $(B, \mathbf{y})$ is the LWE instance we need, since if we can solve for $\mathbf{s}$ we obtain $\mathbf{e} = \mathbf{y} - B\mathbf{s}$.
 
 ## 1.2 Basic Theorems
 
@@ -73,7 +73,7 @@
 ## 1.3 Basic Crypto Application
 
 1. Show that the PKE demonstrated is correct if $\mathsf{Supp}(\chi) \subseteq (-q/4,q/4)$ aand CPA-secure under the LWE assumption $\mathsf{LWE}$$(n,m = \mathsf{poly}(n),q,\chi)$.
-    *Solution:* Correctness is immediate. For security:
+    `Solution:` Correctness is immediate. For security:
 
 2. > Open Problem 1.1: Construct a *nice* private-key encryption from the hardness of SIS.
 
