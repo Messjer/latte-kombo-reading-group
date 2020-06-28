@@ -48,6 +48,28 @@
     `Solution:` Consider the set $\{e_1\mathbf{a}_1 + \ldots e_m \mathbf{a}_m \vert e_1,\ldots, e_m \in \{0,1,2\ldots,B\}\}$. Since $(B + 1)^m > q^n$, there exist  $\mathbf{e}, \mathbf{f}$ such that $\mathbf{Ae = Af}$ so $\mathbf{A}(\mathbf{e - f}) = 0$. Note that $\mathbf{e - f} \in \{-B,\ldots,B\}^m$ is such a short vector solution. 
     
 3. Show that the average cases of hSIS and SIS are equivalent in that a p.p.t. algorithm for one gives a p.p.t. algorithm to the other.
+    `Solution:` 
+    `First direction` From $\mathsf{SIS}(n,m,q,B)$ to $\mathsf{hSIS}(n,m + 1,q,\frac{B}{2})$: Given a random $(\mathbf{A,b})$ for SIS, let 
+    $$
+    A' = 
+    \begin{bmatrix}
+    \mathbf{A} & \mathbf{A}\mathbf{r} + t\mathbf{b}
+    \end{bmatrix},
+    $$
+    where $r \gets \{-1,1\}^B, t \gets \{-(B/2)^{-1},\ldots,-1,1\ldots,(B/2)^{-1}\}$ are randomly chosen. By the leftover hash lemma, $(\mathbf{A}, \mathbf{Ar})$ is statistically close to $(\mathbf{A}, \mathbf{y})$ where $\mathbf{y}$ is uniformly random. So $A'$ is uniformly random and independent from $t$. We call hSIS on $A'$ to obtain a solution $e' = [\mathbf{e}\quad k]$ where $k$ corresponds to the extra column. Now we have
+    $$
+    \mathbf{Ae} + k\mathbf{Ar} + kt\mathbf{b} = 0.
+    $$
+    Since $A'$ is independent from $t$, $k$ and $t$ are independent. Therefore $\Pr[kt = -1]$ is roughly $\frac{1}{B}$, in which case $\mathbf{e} + k\mathbf{r}$ is a solution to the SIS.
+    
+    `Other direction` From $\mathsf{hSIS}(n,m,q,B)$ to $\mathsf{SIS}(n,m - 1,q,B)$: Given a random input $\mathbf{A} = [A' \Vert b]$ for hSIS, we can solve for a short $\mathbf{e}$ to the equation $\mathbf{Ae} = 0$ by querying the SIS oracle with $(A', b)$, which gives us a short $\mathbf{e}'$ satisfying $A'\mathbf{e}' = b$. Then
+    $$
+    e = \begin{bmatrix} \mathbf{e}'\\ -1 \end{bmatrix}
+    $$
+    
+    is a solution to the original hSIS problem.
+    
+    `Another reduction for the other direction` From $\mathsf{hSIS}(n,m,q,B)$ to $\mathsf{SIS}(n,m,q,\frac{B}{2})$: Given a random input $\mathbf{A}$, generate a random $\mathbf{f}$ and query the SIS oracle with $(A, A\mathbf{f})$. Within several trials we would obtain a solution that is not $\mathbf{f}$. Their difference is a solution to the hSIS problem.
 
 ### Part B: LWE-related
 
@@ -68,7 +90,7 @@
 ### Normal form SIS and short secret LWE
 
 1. Show that for random $\mathbf{B} \in \mathbb{Z}_q^{n\times n}, A' \in \mathbb{Z}_q^{n \times (m - n)}$,  $\mathbf{B}[\mathbf{A}'\Vert I]$ is uniformly random.
-2. Show polynomial-time reductions of ssLWE($n,m,q,\chi$) and LWE($n,m,q,\chi)$ in both directions, where ssLWE is LWE except that the secret is also short (drawn from the error distribution).
+2. Show polynomial-time reductions of ssLWE($n,m,q,\chi$) and LWE($n,m,q,\chi)$ in both directions, where ssLWE is LWE except that the secret is also short (drawn from the error distribution). *Maybe this can be shown by noting that ssLWE is nfSIS in disguise.*
 
 ## 1.3 Basic Crypto Application
 
